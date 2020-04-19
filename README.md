@@ -4,7 +4,7 @@
 
 docker-1c-server -- это сервер 1С:Предприятия в контейнере Docker.
 
-В качестве сервера баз данных можно использовать [Postgres Professional в контейнере Docker](https://github.com/a4neg/postgrespro-1c).
+В качестве сервера баз данных можно использовать [Postgres Professional в контейнере Docker](https://github.com/lufton/postgrespro-1c).
 
 ## Как это установить?
 
@@ -12,7 +12,7 @@ docker-1c-server -- это сервер 1С:Предприятия в конте
 
 Клонируйте репозиторий:
 
-    git clone https://github.com/a4neg/1c-server.git
+    git clone https://github.com/lufton/1c-server.git
 
 Скопируйте deb-файлы дистрибутива сервера 1С:Предприятия в каталог `docker-1c-server` и затем выполните команды (здесь и далее вам понадобятся права администратора):
 
@@ -37,11 +37,16 @@ docker-1c-server -- это сервер 1С:Предприятия в конте
     docker restart 1c-server
 
 Для запуска hasp зайдите в docker
-docker exec -ti a4neg/1-server bash
+
+    docker exec -ti lufton/1-server bash
+
 и запустите hasp
-systemctl start haspd
+
+    systemctl start haspd
+
 сохраните образ
-docker commit "ID_вашего_образа"
+
+    docker commit "ID_вашего_образа"
 
 ## Где мои данные?
 

@@ -20,13 +20,15 @@ RUN apt-get -qq update \
 RUN localedef --inputfile ru_RU --force --charmap UTF-8 --alias-file /usr/share/locale/locale.alias ru_RU.UTF-8
 ENV LANG ru_RU.utf8
 
-ADD ./deb/*.deb /tmp/
+ADD ./deb/*.deb* /tmp/
 
 ENV PLATFORM_VERSION 83
-ENV SERVER_VERSION 8.3.11-3034
+ENV SERVER_VERSION 8.3.16-1296
+RUN cat /tmp/1c-enterprise$PLATFORM_VERSION-server_${SERVER_VERSION}_amd64.deb.* > /tmp/1c-enterprise$PLATFORM_VERSION-server_${SERVER_VERSION}_amd64.deb
 RUN dpkg --install /tmp/1c-enterprise$PLATFORM_VERSION-common_${SERVER_VERSION}_amd64.deb 2> /dev/null \
   && dpkg --install /tmp/1c-enterprise$PLATFORM_VERSION-server_${SERVER_VERSION}_amd64.deb 2> /dev/null \
-  && rm /tmp/*.deb \
+  && dpkg --install /tmp/1c-enterprise$PLATFORM_VERSION-ws_${SERVER_VERSION}_amd64.deb 2> /dev/null \
+  && rm /tmp/*.deb* \
   && mkdir --parent /var/log/1C /home/usr1cv8/.1cv8/1C/1cv8/conf \
   && chown --recursive usr1cv8:grp1cv8 /var/log/1C /home/usr1cv8
 
