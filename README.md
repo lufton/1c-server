@@ -38,7 +38,7 @@
 
 Для запуска hasp зайдите в docker
 
-    docker exec -ti lufton/1-server bash
+    docker exec -ti lufton/1c-server bash
 
 и запустите hasp
 
