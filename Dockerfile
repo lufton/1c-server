@@ -1,6 +1,8 @@
-FROM ubuntu:xenial
+FROM FROM debian:stretch
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV LANG ru_RU.UTF-8
+ENV LC_ALL ru_RU.UTF-8
 
 ENV GOSU_VERSION 1.7
 RUN apt-get -qq update \
@@ -18,7 +20,6 @@ RUN apt-get -qq update \
   && gosu nobody true 
 
 RUN localedef --inputfile ru_RU --force --charmap UTF-8 --alias-file /usr/share/locale/locale.alias ru_RU.UTF-8
-ENV LANG ru_RU.utf8
 
 ADD ./deb/*.deb* /tmp/
 
