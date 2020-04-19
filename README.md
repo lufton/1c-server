@@ -1,8 +1,8 @@
-# docker-1c-server
+# 1c-server
 
 ## Что это?
 
-docker-1c-server -- это сервер 1С:Предприятия в контейнере Docker.
+1c-server -- это сервер 1С:Предприятия в контейнере Docker.
 
 В качестве сервера баз данных можно использовать [Postgres Professional в контейнере Docker](https://github.com/lufton/postgrespro-1c).
 
@@ -38,7 +38,7 @@ docker-1c-server -- это сервер 1С:Предприятия в конте
 
 Для запуска hasp зайдите в docker
 
-    docker exec -ti lufton/1-server bash
+    docker exec -ti lufton/1c-server bash
 
 и запустите hasp
 
