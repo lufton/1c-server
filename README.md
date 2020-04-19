@@ -1,4 +1,4 @@
-# docker-1c-server
+# 1c-server
 
 ## Что это?
 
